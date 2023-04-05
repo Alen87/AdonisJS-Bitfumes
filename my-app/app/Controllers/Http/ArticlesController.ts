@@ -5,10 +5,12 @@ export default class ArticlesController {
     
     public async view ({view}){
         const articles= await Database.from('articles').select('*') 
-        return view.render("news.view",{articles})
+        return view.render("article/view",{articles})
     }
 
 
-
+    public async create({view}){
+      return view.render('article/create');  
+    }
 
 }
